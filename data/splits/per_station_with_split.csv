@@ -12,7 +12,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2016-01-11,Auchencorth Moss,Scotland,,,False,train
 2016-01-12,Auchencorth Moss,Scotland,,,False,train
 2016-01-13,Auchencorth Moss,Scotland,1.296,1.296,False,train
-2016-01-14,Auchencorth Moss,Scotland,-0.043,-0.043,False,train
+2016-01-14,Auchencorth Moss,Scotland,,,False,train
 2016-01-15,Auchencorth Moss,Scotland,0.605,0.605,False,train
 2016-01-16,Auchencorth Moss,Scotland,2.81,2.81,False,train
 2016-01-17,Auchencorth Moss,Scotland,0.778,0.778,False,train
@@ -123,7 +123,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2016-05-01,Auchencorth Moss,Scotland,2.372,2.372,False,train
 2016-05-02,Auchencorth Moss,Scotland,0.391,0.391,False,train
 2016-05-03,Auchencorth Moss,Scotland,1.118,1.118,False,train
-2016-05-04,Auchencorth Moss,Scotland,-0.125,-0.125,False,train
+2016-05-04,Auchencorth Moss,Scotland,,,False,train
 2016-05-05,Auchencorth Moss,Scotland,2.039,2.039,False,train
 2016-05-06,Auchencorth Moss,Scotland,4.833,4.833,False,train
 2016-05-07,Auchencorth Moss,Scotland,1.167,1.167,False,train
@@ -273,7 +273,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2016-09-28,Auchencorth Moss,Scotland,4.628,4.628,False,train
 2016-09-29,Auchencorth Moss,Scotland,3.295,3.295,False,train
 2016-09-30,Auchencorth Moss,Scotland,1.628,1.628,False,train
-2016-10-01,Auchencorth Moss,Scotland,-0.086,-0.086,False,train
+2016-10-01,Auchencorth Moss,Scotland,,,False,train
 2016-10-02,Auchencorth Moss,Scotland,0.435,0.435,False,train
 2016-10-03,Auchencorth Moss,Scotland,0.569,0.569,False,train
 2016-10-04,Auchencorth Moss,Scotland,2.996,2.996,False,train
@@ -3128,7 +3128,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2017-07-29,Inverness,Scotland,2.542,2.542,False,train
 2017-07-30,Inverness,Scotland,3.625,3.625,False,train
 2017-07-31,Inverness,Scotland,3.5,3.5,False,train
-2017-08-01,Inverness,Scotland,-0.17,-0.17,False,train
+2017-08-01,Inverness,Scotland,,,False,train
 2017-08-02,Inverness,Scotland,7.33,7.33,False,train
 2017-08-03,Inverness,Scotland,6.17,6.17,False,train
 2017-08-04,Inverness,Scotland,8.208,8.208,False,train
@@ -3247,7 +3247,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2017-11-25,Inverness,Scotland,2.0,2.0,False,train
 2017-11-26,Inverness,Scotland,3.583,3.583,False,train
 2017-11-27,Inverness,Scotland,1.083,1.083,False,train
-2017-11-28,Inverness,Scotland,-0.5,-0.5,False,train
+2017-11-28,Inverness,Scotland,,,False,train
 2017-11-29,Inverness,Scotland,1.75,1.75,False,train
 2017-11-30,Inverness,Scotland,1.208,1.208,False,train
 2017-12-01,Inverness,Scotland,2.04,2.04,False,train
@@ -3590,7 +3590,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2018-11-04,Inverness,Scotland,8.774,8.774,False,test
 2018-11-05,Inverness,Scotland,3.796,3.796,False,test
 2018-11-06,Inverness,Scotland,5.876,5.876,False,test
-2018-11-07,Inverness,Scotland,-0.792,-0.792,False,test
+2018-11-07,Inverness,Scotland,,,False,test
 2018-11-08,Inverness,Scotland,,,False,test
 2018-11-09,Inverness,Scotland,,,False,test
 2018-11-10,Inverness,Scotland,,,False,test
@@ -6245,7 +6245,7 @@ date,station,region,pm25,pm25_treated,outlier,split
 2016-02-17,Northampton Kingsthorpe,East Midlands,7.292,7.292,False,train
 2016-02-18,Northampton Kingsthorpe,East Midlands,9.0,9.0,False,train
 2016-02-19,Northampton Kingsthorpe,East Midlands,,,False,train
-2016-02-20,Northampton Kingsthorpe,East Midlands,-0.292,-0.292,False,train
+2016-02-20,Northampton Kingsthorpe,East Midlands,,,False,train
 2016-02-21,Northampton Kingsthorpe,East Midlands,0.667,0.667,False,train
 2016-02-22,Northampton Kingsthorpe,East Midlands,2.75,2.75,False,train
 2016-02-23,Northampton Kingsthorpe,East Midlands,4.625,4.625,False,train
