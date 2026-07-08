@@ -7,7 +7,9 @@ Exports native hourly station wind measurements from 2016 onwards:
   - maximum gust speed (knots), direction (degrees true), and time (HHMM)
 
 One row per observation time and station across 176 UK Met Office stations.
-Output is written as an uncompressed CSV under data/uk_wind/ (~1.5 GB).
+Writes two CSVs under data/uk_wind/ for you to merge in a notebook:
+  - uk_wind_observations.csv  hourly wind measurements (from per-station yearly files)
+  - uk_wind_stations.csv      station metadata (from station-metadata.csv)
 
 Usage:
   export CEDA_USERNAME='your_ceda_username'
@@ -354,38 +356,16 @@ def _parse_wind_file(payload: bytes, start: pd.Timestamp, end: pd.Timestamp) -> 
     return frame
 
 
-OUTPUT_COLUMNS = [
-    "ob_end_time",
-    "src_id",
-    "station_name",
-    "historic_county",
-    "station_latitude",
-    "station_longitude",
-    "station_elevation",
-    "ob_hour_count",
-    "mean_wind_speed",
-    "mean_wind_dir",
-    "max_gust_dir",
-    "max_gust_speed",
-    "max_gust_ctime",
+OBSERVATION_COLUMNS = [
+    *NATIVE_COLUMNS,
     "source",
     "frequency",
 ]
 
 
-def _attach_station_metadata(
-    frame: pd.DataFrame,
-    station_info: pd.DataFrame,
-    source: str,
-) -> pd.DataFrame:
-    merged = frame.merge(station_info, on="src_id", how="left")
-    merged["source"] = source
-    merged["frequency"] = "hourly"
-    return merged[OUTPUT_COLUMNS]
-
-
 def fetch_uk_wind_by_station(
-    output_path: Path,
+    observations_path: Path,
+    stations_path: Path,
     start_year: int = 2016,
     end_date: date | None = None,
     username: str | None = None,
@@ -395,7 +375,7 @@ def fetch_uk_wind_by_station(
     workers: int = 4,
     batch_size: int = 25,
 ) -> dict:
-    """Fetch native hourly UK mean wind observations and write them to CSV."""
+    """Fetch UK mean wind observations and station metadata as separate CSVs."""
     username = username or os.environ.get("CEDA_USERNAME")
     password = password or os.environ.get("CEDA_PASSWORD")
     access_token = access_token or os.environ.get("CEDA_ACCESS_TOKEN")
@@ -423,18 +403,28 @@ def fetch_uk_wind_by_station(
     if not jobs:
         raise RuntimeError("No MIDAS wind files found for the requested period.")
 
-    station_info = metadata[STATION_METADATA_COLUMNS].drop_duplicates("src_id")
     source_label = f"ceda_midas_open_{dataset_version.replace('dataset-version-', '')}"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    if output_path.exists():
-        output_path.unlink()
+    station_info = (
+        active[STATION_METADATA_COLUMNS]
+        .drop_duplicates("src_id")
+        .sort_values("src_id")
+        .copy()
+    )
+    station_info["source"] = source_label
+    observations_path.parent.mkdir(parents=True, exist_ok=True)
+    if observations_path.exists():
+        observations_path.unlink()
+
+    stations_path.parent.mkdir(parents=True, exist_ok=True)
+    station_info.to_csv(stations_path, index=False)
+    print(f"Saved {len(station_info)} stations to {stations_path}")
 
     print(f"Downloading {len(jobs)} yearly station files...")
     completed = 0
     row_count = 0
     min_time: pd.Timestamp | None = None
     max_time: pd.Timestamp | None = None
-    station_names: set[str] = set()
+    station_ids: set[str] = set()
     pending_frames: list[pd.DataFrame] = []
     wrote_header = False
 
@@ -444,15 +434,18 @@ def fetch_uk_wind_by_station(
             return
         batch = pd.concat(pending_frames, ignore_index=True)
         pending_frames.clear()
-        batch = _attach_station_metadata(batch, station_info, source_label)
-        batch.to_csv(output_path, mode="a", header=not wrote_header, index=False)
+        batch["source"] = source_label
+        batch["frequency"] = "hourly"
+        batch[OBSERVATION_COLUMNS].to_csv(
+            observations_path, mode="a", header=not wrote_header, index=False
+        )
         wrote_header = True
         row_count += len(batch)
         batch_min = batch["ob_end_time"].min()
         batch_max = batch["ob_end_time"].max()
         min_time = batch_min if min_time is None else min(min_time, batch_min)
         max_time = batch_max if max_time is None else max(max_time, batch_max)
-        station_names.update(batch["station_name"].dropna().unique())
+        station_ids.update(batch["src_id"].unique())
 
     def _download_job(job: dict) -> pd.DataFrame:
         payload = download(job["url"])
@@ -475,7 +468,7 @@ def fetch_uk_wind_by_station(
     if row_count == 0:
         raise RuntimeError("All downloads succeeded but no rows matched the date filter.")
 
-    stations = sorted(station_names)
+    stations = sorted(station_ids)
     print(
         f"Downloaded {row_count:,} hourly rows "
         f"({min_time} to {max_time})."
@@ -490,7 +483,8 @@ def fetch_uk_wind_by_station(
         "min_time": min_time,
         "max_time": max_time,
         "station_count": len(stations),
-        "output_path": output_path,
+        "observations_path": observations_path,
+        "stations_path": stations_path,
     }
 
 
@@ -511,10 +505,16 @@ def parse_args() -> argparse.Namespace:
         help="Last date to include (YYYY-MM-DD). Defaults to latest MIDAS data.",
     )
     parser.add_argument(
-        "--output",
+        "--observations-output",
         type=Path,
-        default=Path("data/uk_wind/uk_wind_by_station.csv"),
-        help="Output CSV path (default: data/uk_wind/uk_wind_by_station.csv).",
+        default=Path("data/uk_wind/uk_wind_observations.csv"),
+        help="Hourly observations CSV (default: data/uk_wind/uk_wind_observations.csv).",
+    )
+    parser.add_argument(
+        "--stations-output",
+        type=Path,
+        default=Path("data/uk_wind/uk_wind_stations.csv"),
+        help="Station metadata CSV (default: data/uk_wind/uk_wind_stations.csv).",
     )
     parser.add_argument(
         "--dataset-version",
@@ -553,8 +553,9 @@ def main() -> int:
         else None
     )
 
-    frame = fetch_uk_wind_by_station(
-        output_path=args.output,
+    result = fetch_uk_wind_by_station(
+        observations_path=args.observations_output,
+        stations_path=args.stations_output,
         start_year=args.start_year,
         end_date=end_date,
         username=args.ceda_username,
@@ -564,9 +565,10 @@ def main() -> int:
         workers=args.workers,
     )
 
-    print(f"Saved to {frame['output_path']}")
-    preview = pd.read_csv(args.output, nrows=5)
-    print(preview.to_string(index=False))
+    print(f"Saved observations to {result['observations_path']}")
+    print(pd.read_csv(args.observations_output, nrows=5).to_string(index=False))
+    print(f"\nSaved stations to {result['stations_path']}")
+    print(pd.read_csv(args.stations_output).head(5).to_string(index=False))
     return 0
 
 
