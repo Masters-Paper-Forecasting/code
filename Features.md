@@ -1,6 +1,6 @@
 Across the provided papers, a wide variety of features were used to predict PM2.5 concentrations, ranging from strictly historical PM2.5 readings to complex combinations of meteorological, chemical, and spatial data. These features can be grouped into the following main categories:
 
-**1. Historical PM2.5 Data and Trend Attributes** - Hiruni
+**1. Historical PM2.5 Data and Trend Attributes** -  
 
 *   **Raw Historical Data:** Many models directly utilize sequences of past hourly PM2.5 concentrations over specific time windows (e.g., the previous 12 to 72 hours) as their primary inputs.
 
@@ -8,7 +8,7 @@ Across the provided papers, a wide variety of features were used to predict PM2.
 
 *   **Spatiotemporal Peer Data:** To capture regional pollution dynamics, some models incorporate historical PM2.5 sequences from neighboring or "peer" monitoring stations. These peer stations are dynamically selected based on temporal pattern similarity using techniques like Dynamic Time Warping (DTW) rather than just geographical proximity. 
 
-**2. Meteorological Factors** - Matt
+**2. Meteorological Factors** -  
 
 Meteorological variables are widely integrated to provide context for how weather influences pollutant dispersion, accumulation, and atmospheric stability. Commonly used features include:
 
@@ -21,7 +21,7 @@ Meteorological variables are widely integrated to provide context for how weathe
 
 *   **Solar Radiation:** Included in initial datasets to account for weather impacts.
 
-**3. Auxiliary Air Pollutants and Chemical Compounds** - Veena
+**3. Auxiliary Air Pollutants and Chemical Compounds** -  
 
 Models frequently incorporate co-pollutants that share emission sources with PM2.5 or participate in secondary aerosol formation. Features used across various studies include:
 
@@ -29,7 +29,7 @@ Models frequently incorporate co-pollutants that share emission sources with PM2
 
 *   **Volatile Organic Compounds (VOCs):** Features such as Benzene, Toluene, Ethylbenzene, Xylene, and m,p-Xylene.
 
-**4. Temporal and Geographic Metadata** - Veena
+**4. Temporal and Geographic Metadata** -  
 To account for seasonal cycles, human activity rhythms, and spatial contexts, some datasets incorporate fundamental metadata:
 
 *   **Time Variables:** Date, day of the week, month, year, and hour of the day.
