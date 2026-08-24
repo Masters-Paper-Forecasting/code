@@ -1,2 +1,25 @@
 .env
 data/*
+
+# Local / generated
+.conda/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Root extracts
+pm25_cleaned.csv
+
+# Fitted tree models
+model_training/saved_con_rf/
+model_training/saved_con_xgb/
+*.joblib
+
+# Per-horizon CSVs, PNGs and related dumps
+model_training/rf_results_path/
+model_training/xgb_results_path/
+model_training/multistep_horizon_results/
+model_training/**/*.csv
+model_training/**/*.png
+model_training/**/*.json
