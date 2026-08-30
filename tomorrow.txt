@@ -1,12 +1,3 @@
-1. Gap review
-2. Figure redesign based on report
-3. References
-
-6.3 What the forecast actually delivers — interprets 5.3 + the proposal
-A seasonal expectation, not a daily forecast. Reconcile with Presposal's "high accuracy long-term forecasting" claim and state the corrected version. Persistence can't test this; a day-of-year climatology baseline is the proper comparison and its absence is a limitation.
-
-6.4 Limitations — ~75 w
-Single kerbside site (Marylebone is traffic-dominated, not representative of UK exposure), ~2.7 years training, one test year, no co-pollutants despite Features.md, the incomplete 1-day model set, and the evaluation-window inconsistency if unresolved at submission.
-
-6.5 Prior work — ~75 w
-Where your error magnitudes and skill horizon sit against the short-horizon literature. tomorrow.txt flagged this and it's still outstanding — it's the one paragraph you can't write from your own data.
+1. Add references (use NotebookLM)
+2. Merge in with figures
+3. Send to dad for word cut + feedback
