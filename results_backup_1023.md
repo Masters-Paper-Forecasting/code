@@ -2,7 +2,7 @@
 
 5.1 Setup and Evaluation Protocol
 
-The dataset was assembled from various publicly available sources (DEFRA, no date, 2026; Met Office, 2025a, 2025b, 2026a; Met Office et al., 2026b). London Marylebone Road with meteorological data drawn from nearby stations was used as the primary study region for our analysis due to its reliable and comprehensive air quality data. Pooled-path evaluation was conducted on differing long horizons to assess model performance across the full range of the horizons, alongside a single lead day evaluation. Creating a dataset with 1,364 days of observations, we used a daily temporal resolution for our analysis to avoid noise from short-term fluctuations. A series of metrics were utilized to evaluate model performance (MAE, MSE, RMSE,  R², MAPE, MBE) to ensure a comprehensive comparison of model accuracy and reliability. Furthermore, persistence and climatology baselines were used to benchmark the performance of the six models in comparison to a continuation of the origin observation and seasonal averages (EPA, 2003). Mean Bias Error (MBE) was included on public health grounds to quantify systematic over  or under prediction by the models, the more dangerous bias being under-prediction of PM2.5 concentrations.
+The dataset was assembled from various publicly available sources (DEFRA, no date, Department for Environment, Food and Rural Affairs, 2026, Met Office, 2025a, 2025b, 2026a, 2026b, Met Office et al. 2026b). London Marylebone Road with meteorological data drawn from nearby stations was used as the primary study region for our analysis due to its reliable and comprehensive air quality data. Pooled-path evaluation was conducted on differing long horizons to assess model performance across the full range of the horizons, alongside a single lead day evaluation. Creating a dataset with 1,364 days of observations, we used a daily temporal resolution for our analysis to avoid noise from short-term fluctuations. A series of metrics were utilized to evaluate model performance (MAE, MSE, RMSE,  R², MAPE, MBE) to ensure a comprehensive comparison of model accuracy and reliability. Furthermore, persistence and climatology baselines were used to benchmark the performance of the six models in comparison to a continuation of the origin observation and seasonal averages (EPA, 2003). Mean Bias Error (MBE) was included on public health grounds to quantify systematic over  or under prediction by the models, the more dangerous bias being under-prediction of PM2.5 concentrations.
 
 5.2 Model Comparison
 
@@ -55,11 +55,7 @@ Further research could explore, utilizing longer historical data, this would all
 
 DEFRA (no date) Data archive. Available from: https://uk-air.defra.gov.uk/data/ [Accessed 27 August 2026].
 
-DEFRA (2026) London Marylebone Road air quality measurements, UK-AIR [online]. Available from: https://uk-air.defra.gov.uk/networks/site-info?site_id=MY1 [Accessed 13 July 2026].
-
-EPA (2003) Guidelines for developing an air quality (ozone and PM2.5) forecasting program. EPA-456/R-03-002. Environmental Protection Agency, Office of Air Quality Planning and Standards. Available from: https://www.airnow.gov/sites/default/files/2020-06/aq-forecasting-guidance-1016.pdf
-
-Lee, Y., Chien, F., Chien, H., Lin, Y. and Sun, M. (2024) Enhancing real-time PM2.5 forecasts: A hybrid approach of WRF-CMAQ model and CNN algorithm. Atmospheric Environment [online]. 338, article no. 120835. Available from: https://doi.org/10.1016/j.atmosenv.2024.120835 [Accessed 31 August 2026].
+Department for Environment, Food and Rural Affairs (2026) London Marylebone Road air quality measurements (PM2.5, PM10, nitric oxide, nitrogen dioxide, nitrogen oxides as nitrogen dioxide, ozone and carbon monoxide), UK-AIR Data Archive [online]. Available from: https://uk-air.defra.gov.uk/data/ [Accessed 13 July 2026].
 
 Met Office (2025a) MIDAS Open: UK hourly weather observation data, NERC EDS Centre for Environmental Data Analysis (v202507) [online]. Available from: https://dx.doi.org/10.5285/99173f6a802147aeba430d96d2bb3099 [Accessed 27 August 2026].
 
@@ -69,8 +65,12 @@ Met Office (2026a) MIDAS Open: UK mean wind data, NERC EDS Centre for Environmen
 
 Met Office, Hollis, D., Carlisle, E., Kendon, M., Packman, S. and Doherty, A. (2026b) HadUK-Grid Climate Observations by Administrative Regions over the UK, NERC EDS Centre for Environmental Data Analysis (v1.3.2.ceda) [online]. Available from: https://dx.doi.org/10.5285/386b3c1ee2054ef5ae0d73060963a9f1 [Accessed 27 August 2026].
 
-Sun, H., Fung, J.C.H., Chen, Y., Chen, W., Li, Z., Huang, Y., Lin, C., Hu, M. and Lu, X. (2021) Improvement of PM2.5 and O3 forecasting by integration of 3D numerical simulation with deep learning techniques. Sustainable Cities and Society [online]. 75, article no. 103372. Available from: https://doi.org/10.1016/j.scs.2021.103372 [Accessed 31 August 2026].
+Zeng, L., Dong, R., Yuan, M., Jing, L. and Jiao, S. (2026) Evaluating deep learning time series models for PM2.5 forecasting across diverse horizons. iScience [online]. 29 (2), article no. 114770. Available from: https://doi.org/10.1016/j.isci.2026.114770 [Accessed 31 August 2026].
+
+Lee, Y., Chien, F., Chien, H., Lin, Y. and Sun, M. (2024) Enhancing real-time PM2.5 forecasts: A hybrid approach of WRF-CMAQ model and CNN algorithm. Atmospheric Environment [online]. 338, article no. 120835. Available from: https://doi.org/10.1016/j.atmosenv.2024.120835 [Accessed 31 August 2026].
 
 Wood, D.A. (2024) Trend-attribute forecasting of hourly PM2.5 trends in fifteen cities of Central England applying optimized machine learning feature selection. Journal of Environmental Management [online]. 356, article no. 120561. Available from: https://doi.org/10.1016/j.jenvman.2024.120561 [Accessed 31 August 2026].
 
-Zeng, L., Dong, R., Yuan, M., Jing, L. and Jiao, S. (2026) Evaluating deep learning time series models for PM2.5 forecasting across diverse horizons. iScience [online]. 29 (2), article no. 114770. Available from: https://doi.org/10.1016/j.isci.2026.114770 [Accessed 31 August 2026].
+Sun, H., Fung, J.C.H., Chen, Y., Chen, W., Li, Z., Huang, Y., Lin, C., Hu, M. and Lu, X. (2021) Improvement of PM2.5 and O3 forecasting by integration of 3D numerical simulation with deep learning techniques. Sustainable Cities and Society [online]. 75, article no. 103372. Available from: https://doi.org/10.1016/j.scs.2021.103372 [Accessed 31 August 2026].
+
+EPA (2003) Guidelines for developing an air quality (ozone and PM2.5) forecasting program. EPA-456/R-03-002. Environmental Protection Agency, Office of Air Quality Planning and Standards. Available from: https://www.airnow.gov/sites/default/files/2020-06/aq-forecasting-guidance-1016.pdf
