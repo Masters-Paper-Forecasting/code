@@ -4,6 +4,8 @@ Single-site study used in `results.md`: London Marylebone Road, daily resolution
 
 The frozen modelling tables in `london_final_dataset/` are what the report numbers come from. Re-running earlier notebooks can rebuild them, but small differences in meteorological aggregation will not bit-match those CSVs.
 
+`features/feature_data/uk_temperature_london.csv` ends on 31 December 2024. The committed files in `features/meteorological/` already have 2025 temperatures (no nulls on the test year). Do not re-run `Meterological_features.ipynb` if you need those tables to match the report; extending the HadUK extract through 2025-12-30 is required first.
+
 ## Run order
 
 1. **Target cleaning** — `targ_data_cleaning_london_only.ipynb`  
