@@ -222,7 +222,7 @@ date,mean_air_pressure_hpa,hourly_obs_count,air_pressure_max_hpa,air_pressure_mi
 2022-11-13,1019.4208333333332,24,1024.3,1013.8,False,False,False,False
 2022-11-14,1008.4333333333334,24,1013.2,1005.2,False,False,False,False
 2022-11-15,996.1708333333332,24,1004.9,992.0,False,False,False,False
-2022-11-16,988.5541666666667,24,993.5,975.8,False,False,True,False
+2022-11-16,988.5541666666667,24,993.5,975.8,False,True,True,False
 2022-11-17,983.2125,24,990.9,973.9,True,True,True,False
 2022-11-18,1000.6791666666667,24,1009.0,991.7,False,False,False,False
 2022-11-19,1012.0333333333333,24,1013.0,1009.7,False,False,False,False
@@ -284,7 +284,7 @@ date,mean_air_pressure_hpa,hourly_obs_count,air_pressure_max_hpa,air_pressure_mi
 2023-01-14,1000.5739130434783,23,1012.6,994.3,False,False,False,False
 2023-01-15,998.1833333333334,24,999.9,991.8,False,False,False,False
 2023-01-16,985.9250000000001,24,989.7,981.5,True,True,True,False
-2023-01-17,989.625,24,993.5,987.6,False,False,False,False
+2023-01-17,989.625,24,993.5,987.6,False,True,False,False
 2023-01-18,998.0708333333333,24,1005.2,993.6,False,False,False,False
 2023-01-19,1007.9416666666666,24,1012.7,1005.8,False,False,False,False
 2023-01-20,1018.8708333333334,24,1026.2,1013.0,False,False,False,False
@@ -558,7 +558,7 @@ date,mean_air_pressure_hpa,hourly_obs_count,air_pressure_max_hpa,air_pressure_mi
 2023-10-15,1025.5249999999999,24,1026.9,1022.8,False,False,False,False
 2023-10-16,1021.5916666666667,24,1025.3,1018.5,False,False,False,False
 2023-10-17,1013.8583333333332,24,1018.0,1008.4,False,False,False,False
-2023-10-18,994.7541666666666,24,1007.5,982.4,False,False,False,False
+2023-10-18,994.7541666666666,24,1007.5,982.4,False,False,True,False
 2023-10-19,983.6958333333333,24,986.4,979.9,True,True,True,False
 2023-10-20,976.525,24,979.2,974.4,True,True,True,False
 2023-10-21,984.7416666666667,24,996.1,978.8,True,False,True,False
@@ -718,7 +718,7 @@ date,mean_air_pressure_hpa,hourly_obs_count,air_pressure_max_hpa,air_pressure_mi
 2024-03-23,1011.7958333333332,24,1015.0,1009.6,False,False,False,False
 2024-03-24,1009.8791666666666,24,1011.0,1008.7,False,False,False,False
 2024-03-25,1000.4291666666667,24,1008.1,993.6,False,False,False,False
-2024-03-26,987.4083333333333,24,993.0,982.4,False,True,False,False
+2024-03-26,987.4083333333333,24,993.0,982.4,False,True,True,False
 2024-03-27,980.5958333333333,24,982.6,977.7,True,True,True,False
 2024-03-28,977.725,24,982.2,973.4,True,True,True,False
 2024-03-29,987.4250000000001,24,992.6,983.2,False,True,False,False
@@ -915,7 +915,7 @@ date,mean_air_pressure_hpa,hourly_obs_count,air_pressure_max_hpa,air_pressure_mi
 2024-10-06,1000.1458333333334,24,1006.8,995.7,False,False,False,False
 2024-10-07,997.3041666666667,24,999.3,993.8,False,False,False,False
 2024-10-08,992.25,24,993.9,988.5,False,False,False,False
-2024-10-09,987.1999999999999,24,992.2,985.6,False,True,False,False
+2024-10-09,987.1999999999999,24,992.2,985.6,True,True,False,False
 2024-10-10,1005.3291666666668,24,1013.9,993.5,False,False,False,False
 2024-10-11,1016.2208333333333,24,1018.0,1014.3,False,False,False,False
 2024-10-12,1008.5124999999999,24,1014.2,1004.6,False,False,False,False
@@ -1035,7 +1035,7 @@ date,mean_air_pressure_hpa,hourly_obs_count,air_pressure_max_hpa,air_pressure_mi
 2025-02-03,1024.6625000000001,24,1025.5,1023.7,False,False,False,False
 2025-02-04,1023.2458333333334,24,1028.5,1021.2,False,False,False,False
 2025-02-05,1037.2958333333333,24,1042.9,1029.5,False,False,False,False
-2025-02-06,1041.7083333333333,24,1044.0,1036.7,False,False,False,False
+2025-02-06,1041.7083333333333,24,1044.0,1036.7,False,True,False,False
 2025-02-07,1025.2749999999999,24,1035.9,1017.3,False,False,False,False
 2025-02-08,1018.0416666666666,24,1023.3,1015.4,False,False,False,False
 2025-02-09,1027.4041666666667,24,1029.3,1023.8,False,False,False,False

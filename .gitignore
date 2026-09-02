@@ -7,32 +7,50 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# Root data dumps except the two DEFRA extracts the cleaning notebook reads
-data/*
-!data/AirQualityDataDaily2016_2020.csv
-!data/AirQualityDataDaily2021_2025.csv
+# Data: ignore bulk dumps by default, then un-ignore what the pipeline needs
+data/**
+!data/raw/
+!data/raw/air_quality/
+!data/raw/air_quality/**
+!data/raw/meteorology/
+!data/raw/meteorology/**
+!data/processed/
+!data/processed/**
+!data/modelling/
+!data/modelling/**
 
-# Root extracts
+# Root extracts / leftovers
 pm25_cleaned.csv
 
 # Retrainable tree checkpoints
-model_training/saved_con_rf/
-model_training/saved_con_xgb/
+notebooks/models/saved_con_rf/
+notebooks/models/saved_con_xgb/
 *.joblib
 
 # Per-horizon dumps that are not the report tables
-model_training/multistep_horizon_results/
-model_training/**/*.png
-model_training/**/*.json
-model_training/**/*.csv
-!model_training/pooled_path_comparison.csv
-!model_training/pooled_path_feature_importance_ranks.csv
-!model_training/average_feature_importance_ranking.csv
-!model_training/cnn_lstm_results/
-!model_training/cnn_lstm_results/**
-!model_training/transformer_results/
-!model_training/transformer_results/**
-!model_training/true_multi_horizon_results/
-!model_training/true_multi_horizon_results/multi_horizon_metrics_original_scale.csv
+notebooks/models/multistep_horizon_results/
+notebooks/models/**/*.png
+notebooks/models/**/*.json
+notebooks/models/**/*.csv
+!notebooks/models/pooled_path_comparison.csv
+!notebooks/models/pooled_path_feature_importance_ranks.csv
+!notebooks/models/average_feature_importance_ranking.csv
+!notebooks/models/cnn_lstm_results/
+!notebooks/models/cnn_lstm_results/**
+!notebooks/models/transformer_results/
+!notebooks/models/transformer_results/**
+!notebooks/models/true_multi_horizon_results/
+!notebooks/models/true_multi_horizon_results/multi_horizon_metrics_original_scale.csv
+!notebooks/models/rf_results_path/
+!notebooks/models/rf_results_path/random_forest_pooled_path_results.csv
+!notebooks/models/rf_results_path/rf_permutation_importance_1d.csv
+!notebooks/models/rf_results_path/rf_permutation_importance_7d.csv
+!notebooks/models/rf_results_path/rf_permutation_importance_14d.csv
+!notebooks/models/rf_results_path/rf_permutation_importance_30d.csv
+!notebooks/models/rf_results_path/rf_predictions_1d.csv
+!notebooks/models/xgb_results_path/
+!notebooks/models/xgb_results_path/xgboost_pooled_path_results.csv
+!notebooks/models/xgb_results_path/xgboost_feature_importance_across_horizons.csv
+!notebooks/models/xgb_results_path/xgb_predictions_1d.csv
 
 *.png
