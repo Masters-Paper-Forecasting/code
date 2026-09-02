@@ -1,3 +1,0 @@
-1. Add references (use NotebookLM) - done
-2. Merge in with figures
-3. Send to dad for word cut + feedback
