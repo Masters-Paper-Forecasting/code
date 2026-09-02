@@ -21,8 +21,8 @@ The frozen modelling tables in `london_final_dataset/` are what the report numbe
    Merges PM2.5 features + meteorology, aligns to the cleaned target, drops unused columns, writes `london_final_dataset/marylebone_{train,test,all}.csv`.
 
 5. **Models** (from `model_training/`, all read `../london_final_dataset`)  
-   - 1-day trees: `Random_Forest.ipynb`, `XG Boost-2.ipynb`  
-   - Pooled path trees: `Random_Forest_multistep.ipynb`, `XG Boost-2_multistep.ipynb`  
+   - Trees: `Random_Forest_multistep.ipynb`, `XG Boost-2_multistep.ipynb`  
+
    - Sequence models: `cnn_lstm.ipynb`, `transformer.ipynb`, `gru_lstm_multi_horizon_.ipynb`  
    - Baseline: `climatology_baseline.ipynb`  
    Persistence is scored in the comparison notebook from the tree prediction files.
