@@ -54,3 +54,6 @@ notebooks/models/**/*.csv
 !notebooks/models/xgb_results_path/xgb_predictions_1d.csv
 
 *.png
+
+*.docx
+*.md
